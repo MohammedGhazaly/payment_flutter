@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_payments/core/assets/app_assets.dart';
 import 'package:flutter_payments/core/utils/app_styles.dart';
-import 'package:flutter_payments/features/checkout/presentation/views/widgets/order_info_item.dart';
+import 'package:flutter_payments/features/checkout/presentation/views/my_cart_widgets/order_info_item.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCartBody extends StatelessWidget {
