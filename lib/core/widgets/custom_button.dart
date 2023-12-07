@@ -5,9 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final Function()? onTap;
+  final String text;
   const CustomButton({
     super.key,
     required this.onTap,
+    required this.text,
   });
 
   @override
@@ -25,7 +27,7 @@ class CustomButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            "Complete payment",
+            text,
             style: AppStyles.style18.copyWith(
               color: Colors.white,
             ),

@@ -73,11 +73,13 @@ class MyCartBody extends StatelessWidget {
           SizedBox(
             height: 16.h,
           ),
-          CustomButton(onTap: () {
-            Navigator.push(context, CupertinoPageRoute(builder: (context) {
-              return PaymentDetailsView();
-            }));
-          }),
+          CustomButton(
+              text: "Complete payment",
+              onTap: () {
+                Navigator.push(context, CupertinoPageRoute(builder: (context) {
+                  return PaymentDetailsView();
+                }));
+              }),
           SizedBox(
             height: 46.h,
           ),

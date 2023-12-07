@@ -4,8 +4,8 @@ import 'package:flutter_payments/core/utils/app_colors.dart';
 import 'package:flutter_payments/core/widgets/custom_button.dart';
 
 class CustomCreditCard extends StatefulWidget {
-  const CustomCreditCard({super.key});
-
+  const CustomCreditCard({super.key, required this.globalKey});
+  final GlobalKey<FormState> globalKey;
   @override
   State<CustomCreditCard> createState() => _CustomCreditCardState();
 }
@@ -17,7 +17,6 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
       cvvCode = "";
 
   bool showBackView = true;
-  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +36,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               colorScheme:
                   ColorScheme.fromSeed(seedColor: AppColors.primaryColor)),
           child: CreditCardForm(
+              autovalidateMode: AutovalidateMode.always,
               cardNumber: cardNumber,
               expiryDate: expiryDate,
               cardHolderName: cardHolderName,
@@ -49,7 +49,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                 showBackView = model.isCvvFocused;
                 setState(() {});
               },
-              formKey: formKey),
+              formKey: widget.globalKey),
         ),
       ],
     );
