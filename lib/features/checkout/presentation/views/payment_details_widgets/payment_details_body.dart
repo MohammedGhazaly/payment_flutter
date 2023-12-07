@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_payments/core/assets/app_assets.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/payment_details_widgets/payment_method_item.dart';
+import 'package:flutter_payments/features/checkout/presentation/views/payment_details_widgets/payment_methods_list_view.dart';
+import 'package:flutter_payments/models/payment.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PaymentDetailsBody extends StatelessWidget {
@@ -12,8 +15,9 @@ class PaymentDetailsBody extends StatelessWidget {
         SizedBox(
           height: 25.h,
         ),
-        PaymentMethodItem(
-          isActive: false,
+        SizedBox(
+          height: 60.h,
+          child: PaymentMethodsListView(),
         )
       ],
     );

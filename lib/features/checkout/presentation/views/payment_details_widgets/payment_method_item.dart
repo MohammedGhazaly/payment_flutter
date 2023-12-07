@@ -5,9 +5,11 @@ import 'package:flutter_svg/svg.dart';
 
 class PaymentMethodItem extends StatelessWidget {
   final bool isActive;
+  final String imagePath;
   const PaymentMethodItem({
     super.key,
     this.isActive = false,
+    required this.imagePath,
   });
 
   @override
@@ -33,11 +35,12 @@ class PaymentMethodItem extends StatelessWidget {
               ]
             : null,
       ),
-      child: Center(
+      child: Padding(
+        padding: EdgeInsets.all(15.w),
         child: SvgPicture.asset(
-          AppAssets.masterCard,
+          imagePath,
           // width: 45.h,
-          height: 40.h,
+          height: 30.h,
         ),
       ),
     );
