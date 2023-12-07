@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_payments/core/widgets/build_app_bar.dart';
+import 'package:flutter_payments/features/checkout/presentation/views/payment_details_widgets/payment_details_body.dart';
 
 class PaymentDetailsView extends StatelessWidget {
   const PaymentDetailsView({super.key});
@@ -13,6 +14,7 @@ class PaymentDetailsView extends StatelessWidget {
           Navigator.pop(context);
         },
       ),
+      body: PaymentDetailsBody(),
     );
   }
 }
