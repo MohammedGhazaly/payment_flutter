@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_payments/core/assets/app_assets.dart';
 
-class Payment {
+class Payment extends Equatable {
   final String imagePath;
 
   Payment({required this.imagePath});
@@ -11,4 +12,7 @@ class Payment {
       Payment(imagePath: AppAssets.applePay),
     ];
   }
+
+  @override
+  List<Object?> get props => [imagePath];
 }
