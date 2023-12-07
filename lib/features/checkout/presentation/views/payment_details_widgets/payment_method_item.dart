@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_payments/core/utils/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -23,12 +24,12 @@ class PaymentMethodItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.r),
           color: Colors.white,
           border: Border.all(
-            color: isActive ? Color(0xFF34A853) : Colors.grey[700]!,
+            color: isActive ? AppColors.primaryColor : Colors.grey[700]!,
           ),
           boxShadow: isActive
               ? [
                   BoxShadow(
-                    color: Color(0xFF34A853),
+                    color: AppColors.primaryColor,
                     blurRadius: 4,
                     offset: Offset(0, 0),
                     spreadRadius: 1,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_payments/core/utils/app_colors.dart';
 import 'package:flutter_payments/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,7 @@ class CustomButton extends StatelessWidget {
         width: double.infinity,
         height: 60.h,
         decoration: BoxDecoration(
-          color: Color(0xFF34A853),
+          color: AppColors.primaryColor,
           borderRadius: BorderRadius.circular(
             16.r,
           ),
