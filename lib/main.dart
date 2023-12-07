@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/my_cart_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const CheckoutApp());
@@ -11,13 +12,19 @@ class CheckoutApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: MyCartView(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              useMaterial3: true,
+            ),
+            home: MyCartView());
+      },
     );
   }
 }
