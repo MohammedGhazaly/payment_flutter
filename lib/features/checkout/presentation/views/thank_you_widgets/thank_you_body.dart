@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_payments/features/checkout/presentation/views/thank_you_widgets/custom_dashed_lines.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/thank_you_widgets/green_circle.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/thank_you_widgets/white_bottom_circle.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +22,8 @@ class ThankYouBody extends StatelessWidget {
             ),
             const WhiteBottomCircle(xOffset: -0.5),
             const WhiteBottomCircle(xOffset: 0.5, right: 0),
-            GreenCircle()
+            GreenCircle(),
+            CustomDashedLines()
           ],
         ),
       ),
