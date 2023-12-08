@@ -4,8 +4,7 @@ import 'package:flutter_payments/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-AppBar buildAppBar(
-    {required String title, required Function()? onTapFunction}) {
+AppBar buildAppBar({String? title, required Function()? onTapFunction}) {
   return AppBar(
     leading: InkWell(
       onTap: onTapFunction,
@@ -18,7 +17,7 @@ AppBar buildAppBar(
       ),
     ),
     title: Text(
-      title,
+      title ?? "",
       textAlign: TextAlign.center,
       style: AppStyles.style25,
     ),
