@@ -25,7 +25,7 @@ class CheckoutApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: AppTheme.lightTheme,
-          home: ThankYouView(),
+          home: MyCartView(),
         );
       },
     );
