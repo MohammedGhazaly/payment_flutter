@@ -12,7 +12,7 @@ class WhiteBottomCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: MediaQuery.sizeOf(context).height * 0.25,
+      bottom: MediaQuery.sizeOf(context).height * 0.15,
       right: right,
       child: FractionalTranslation(
         translation: Offset(xOffset, 0),
