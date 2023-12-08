@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_payments/core/assets/app_assets.dart';
 import 'package:flutter_payments/core/utils/app_styles.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/thank_you_widgets/custom_dashed_lines.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/thank_you_widgets/green_circle.dart';
+import 'package:flutter_payments/features/checkout/presentation/views/thank_you_widgets/payment_item_info.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/thank_you_widgets/white_bottom_circle.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ThankYouBody extends StatelessWidget {
   const ThankYouBody({super.key});
@@ -73,6 +76,49 @@ class ThankYouBody extends StatelessWidget {
                           style: AppStyles.style24,
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(
+                          16.r,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppAssets.masterCardLogo,
+                          ),
+                          SizedBox(
+                            width: 20.w,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Credit card",
+                                  style: AppStyles.style18,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                ),
+                                Text(
+                                  "Mastercard **78",
+                                  style: AppStyles.style16,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -85,30 +131,6 @@ class ThankYouBody extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class PaymentItemInfo extends StatelessWidget {
-  final String itemKey;
-  final String itemValue;
-  const PaymentItemInfo(
-      {super.key, required this.itemKey, required this.itemValue});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          itemKey,
-          style: AppStyles.style18,
-        ),
-        Text(
-          itemValue,
-          style: AppStyles.styleSemiBold18,
-        ),
-      ],
     );
   }
 }

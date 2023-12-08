@@ -6,4 +6,5 @@ class AppAssets {
   static String applePay = "${imagesPath}apple_pay.svg";
   static String masterCard = "${imagesPath}master_card.svg";
   static String paybal = "${imagesPath}paybal.svg";
+  static String masterCardLogo = "${imagesPath}logo.svg";
 }
