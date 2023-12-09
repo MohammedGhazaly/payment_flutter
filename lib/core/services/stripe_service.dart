@@ -25,4 +25,17 @@ class StripeService {
           merchantDisplayName: "Tharwat"),
     );
   }
+
+  Future<void> displayPaymentSheet() async {
+    await Stripe.instance.presentPaymentSheet();
+  }
+
+  Future<void> makePayment(
+      {required PaymentIntentInputModel paymentIntentInputModel}) async {
+    PaymentIntentModel paymentIntentModel =
+        await createPaymentIntent(paymentIntentInputModel);
+    await initPaymentSheet(
+        paymentIntentClientSecret: paymentIntentModel.clientSecret ?? "");
+    await displayPaymentSheet();
+  }
 }
