@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_payments/features/checkout/data/models/payment.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/payment_details_widgets/payment_method_item.dart';
-import 'package:flutter_payments/models/payment.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PaymentMethodsListView extends StatefulWidget {
