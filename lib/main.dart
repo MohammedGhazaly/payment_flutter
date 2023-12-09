@@ -3,8 +3,6 @@ import 'package:flutter_payments/core/utils/app_themes.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/my_cart_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'features/checkout/presentation/views/thank_you_view.dart';
-
 void main() {
   runApp(const CheckoutApp());
 }
