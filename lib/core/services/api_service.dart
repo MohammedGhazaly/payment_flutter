@@ -1,6 +1,15 @@
 import 'package:dio/dio.dart';
 
 class ApiService {
+  ApiService._();
+  static ApiService? _instance;
+  static ApiService getInstance() {
+    if (_instance == null) {
+      _instance = ApiService._();
+    }
+    return _instance!;
+  }
+
   final Dio dio = Dio();
   Future<Response<dynamic>> post(
       {required Map<String, dynamic> data,

@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_payments/core/utils/app_themes.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/my_cart_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 void main() {
+  Stripe.publishableKey =
+      "pk_test_51OLI1XBbSGdL5kbawIt2XlMFS5pfYYvTQLawKVtqjiTWYnsdrzSKSXx4P0zBbyQ5xJjBc0Q9adBZF22E0kpiKkfI00Ugcaf3Tx";
   runApp(const CheckoutApp());
 }
 

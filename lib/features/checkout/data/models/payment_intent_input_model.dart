@@ -6,8 +6,9 @@ class PaymentIntentInputModel {
 
   Map<String, dynamic> toJson() {
     return {
-      "amount": amount,
-      "currenct": currency,
+      // "amount": "${(double.parse(amount) * 100).toStringAsFixed(0)}",
+      "amount": (double.parse(amount) * 100).toStringAsFixed(0),
+      "currency": currency,
     };
   }
 }

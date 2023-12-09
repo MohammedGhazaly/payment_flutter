@@ -5,11 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final Function()? onTap;
+  final bool isLoading;
   final String text;
   const CustomButton({
     super.key,
     required this.onTap,
     required this.text,
+    this.isLoading = false,
   });
 
   @override
@@ -25,14 +27,20 @@ class CustomButton extends StatelessWidget {
             16.r,
           ),
         ),
-        child: Center(
-          child: Text(
-            text,
-            style: AppStyles.style18.copyWith(
-              color: Colors.white,
-            ),
-          ),
-        ),
+        child: isLoading
+            ? Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )
+            : Center(
+                child: Text(
+                  text,
+                  style: AppStyles.style18.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
       ),
     );
   }

@@ -1,12 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_payments/core/assets/app_assets.dart';
+import 'package:flutter_payments/core/di/checkout_di.dart';
 import 'package:flutter_payments/core/utils/app_styles.dart';
 import 'package:flutter_payments/core/widgets/custom_button.dart';
+import 'package:flutter_payments/features/checkout/data/repos/checkout_repo_impl.dart';
+import 'package:flutter_payments/features/checkout/presentation/manager/payment_cubit.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/my_cart_widgets/my_cart_modal_bottom_sheet.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/my_cart_widgets/order_info_item.dart';
-import 'package:flutter_payments/features/checkout/presentation/views/payment_details_view.dart';
-import 'package:flutter_payments/features/checkout/presentation/views/payment_details_widgets/payment_methods_list_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCartBody extends StatelessWidget {
@@ -84,7 +85,12 @@ class MyCartBody extends StatelessWidget {
                 showModalBottomSheet(
                     context: context,
                     builder: (context) {
-                      return const ModalBottomSheetWidget();
+                      return BlocProvider<PaymentCubit>(
+                        create: (context) => PaymentCubit(
+                          checkoutRepo: injectCheckOutRepo(),
+                        ),
+                        child: PaymentBottomSheet(),
+                      );
                     });
               }),
           SizedBox(
