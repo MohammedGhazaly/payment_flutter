@@ -36,8 +36,10 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           onTap: () async {
             if (state is! PaymentLoading) {
               await PaymentCubit.get(context).makePayment(
-                  paymentIntentInputModel:
-                      PaymentIntentInputModel(amount: "1.5", currency: "USD"));
+                  paymentIntentInputModel: PaymentIntentInputModel(
+                      amount: "1.5",
+                      currency: "USD",
+                      customerId: "cus_P9lS5YfXssMkMm"));
             }
           },
           text: "Continue",

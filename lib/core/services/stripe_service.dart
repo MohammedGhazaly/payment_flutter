@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_payments/core/services/api_keys.dart';
 import 'package:flutter_payments/core/services/api_service.dart';
 import 'package:flutter_payments/features/checkout/data/models/payment_intent_input_model.dart';
@@ -27,7 +28,8 @@ class StripeService {
     await Stripe.instance.initPaymentSheet(
       paymentSheetParameters: SetupPaymentSheetParameters(
           paymentIntentClientSecret: paymentIntentClientSecret,
-          merchantDisplayName: "Tharwat"),
+          merchantDisplayName: "Tharwat",
+          style: ThemeMode.dark),
     );
   }
 
@@ -42,5 +44,14 @@ class StripeService {
     await initPaymentSheet(
         paymentIntentClientSecret: paymentIntentModel.clientSecret ?? "");
     await displayPaymentSheet();
+  }
+
+  Future<String> createCustomer() async {
+    var response = await apiService.post(
+        data: {"name": "tharwat"},
+        contentType: Headers.formUrlEncodedContentType,
+        url: "https://api.stripe.com/v1/customers",
+        token: ApiKeys.secretKey);
+    return response.data["id"];
   }
 }
