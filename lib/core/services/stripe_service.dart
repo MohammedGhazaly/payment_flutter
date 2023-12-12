@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_payments/core/services/api_keys.dart';
 import 'package:flutter_payments/core/services/api_service.dart';
+import 'package:flutter_payments/features/checkout/data/models/ephemerial_key_model/ephemerial_key_model.dart';
 import 'package:flutter_payments/features/checkout/data/models/payment_intent_input_model.dart';
 import 'package:flutter_payments/features/checkout/data/models/payment_intent_model/payment_intent_model.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
@@ -53,5 +54,23 @@ class StripeService {
         url: "https://api.stripe.com/v1/customers",
         token: ApiKeys.secretKey);
     return response.data["id"];
+  }
+
+  Future<EphemerialKeyModel> createEphemerialKey(
+      {required String customerId}) async {
+    var response = await apiService.post(
+        headers: {
+          "Stripe-Version": "2023-10-16",
+          "Authorization":
+              "Bearer sk_test_51OLI1XBbSGdL5kba0vwLGkgB130fXoAucRLMegWIZ3nAZHtTOcgco4VtTMGQNsfVu3s32KPq0NA0Eh0pqtpLqSj2005WAXdU4U"
+        },
+        data: {
+          "customer": customerId,
+        },
+        contentType: Headers.formUrlEncodedContentType,
+        url: "https://api.stripe.com/v1/ephemeral_keys",
+        token: ApiKeys.secretKey);
+    var ephemerialKey = EphemerialKeyModel.fromJson(response.data);
+    return ephemerialKey;
   }
 }
