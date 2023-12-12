@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_payments/core/utils/app_themes.dart';
 import 'package:flutter_payments/features/checkout/presentation/views/my_cart_view.dart';
+import 'package:flutter_payments/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
@@ -27,6 +28,7 @@ class CheckoutApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: AppTheme.lightTheme,
           home: MyCartView(),
+          // home: PaymentDetailsView(),
         );
       },
     );
