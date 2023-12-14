@@ -67,29 +67,28 @@ class CustomButtonBlocConsumer extends StatelessWidget {
                           {
                             "name": "Apple",
                             "quantity": 4,
-                            "price": '10',
+                            "price": "10",
                             "currency": "USD"
                           },
                           {
                             "name": "Pineapple",
                             "quantity": 5,
-                            "price": '12',
+                            "price": "12",
                             "currency": "USD"
                           }
                         ],
-
-                        // Optional
-                        //   "shipping_address": {
-                        //     "recipient_name": "Tharwat samy",
-                        //     "line1": "tharwat",
-                        //     "line2": "",
-                        //     "city": "tharwat",
-                        //     "country_code": "EG",
-                        //     "postal_code": "25025",
-                        //     "phone": "+00000000",
-                        //     "state": "ALex"
-                        //  },
                       }
+                      // Optional
+                      //   "shipping_address": {
+                      //     "recipient_name": "Tharwat samy",
+                      //     "line1": "tharwat",
+                      //     "line2": "",
+                      //     "city": "tharwat",
+                      //     "country_code": "EG",
+                      //     "postal_code": "25025",
+                      //     "phone": "+00000000",
+                      //     "state": "ALex"
+                      //  },
                     }
                   ],
                   note: "Contact us for any questions on your order.",
