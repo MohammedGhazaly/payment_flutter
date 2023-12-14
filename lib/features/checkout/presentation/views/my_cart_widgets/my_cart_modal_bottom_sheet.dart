@@ -16,7 +16,10 @@ class PaymentBottomSheet extends StatelessWidget {
       child: Column(
         children: [
           Spacer(),
-          SizedBox(height: 60.h, child: PaymentMethodsListView()),
+          SizedBox(
+            height: 60.h,
+            child: PaymentMethodsListView(),
+          ),
           Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.h),
@@ -27,6 +30,7 @@ class PaymentBottomSheet extends StatelessWidget {
             //   },
             //   text: "Continue",
             // ),
+
             child: CustomButtonBlocConsumer(),
           ),
           Spacer(
